@@ -1,19 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SideBar } from '../shared/component/side-bar/side-bar';
 //import { SideBarItem } from "../shared/side-bar/side-bar-item/side-bar-item";
 //import { RouterOutlet } from '@angular/router';
-import {FormsModule} from '@angular/forms';
-import { Heading } from "../learning/heading/heading";
+import { FormsModule } from '@angular/forms';
+import { Heading } from '../learning/heading/heading';
 import { User } from '../shared/model/user.model';
-
 
 @Component({
   selector: 'app-root',
   imports: [SideBar, FormsModule, Heading],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrl: './app.css',
 })
-export class App {
+export class App implements OnInit {
   // protected title = 'My Notes App';
   // user = {
   //   name:'Arkhan',
@@ -26,17 +25,23 @@ export class App {
   //   this.count++;
   //}
 
-  heading = 'Parent component text'
+  ngOnInit():void{
+    setTimeout(() => {
+      this.user.name = "Jim Landon";
+    }, 2000);
+  }
 
-  user:User = {
+  heading = 'Parent component text';
+
+  user: User = {
     name: 'Cruise',
     age: 61,
     gender: 'M',
   };
 
   childMessage = '';
-  
-  onClickSubmit($event:string){
-    this.childMessage = $event
+
+  onClickSubmit($event: string) {
+    this.childMessage = $event;
   }
 }

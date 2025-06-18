@@ -21,8 +21,11 @@
     <br>
     action_count: {{count}}
   </main> -->
-  <main class="p-5">
+  <!-- <main class="p-5">
     <app-heading (success)="onClickSubmit($event)"></app-heading>
     <p class="mt-10 text-2xl">{{childMessage}}</p>
+  </main> -->
+  <main class="p-5">
+    <app-heading [name]="user.name"></app-heading>
   </main>
 </section>
