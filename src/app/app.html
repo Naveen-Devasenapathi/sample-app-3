@@ -1,3 +1,28 @@
-<h1 class="text-3xl font-bold underline">
-  Hello world!
-</h1>
+<nav class="fixed top-0 w-full z-50">
+  <ul class="flex w-full px-5 py-3 justify-between bg-emerald-600 text-emerald-50 items-center shadow shadow-emerald-800">
+    <li class="flex gap-2 items-center">
+      <i class="pi pi-clipboard" style="font-size: 1.5rem; color: #cedf0c"></i>
+      <h1 class="text-md">My Notes</h1>
+    </li>
+    <li class="flex items-center gap-3">
+      <h1>Welcome, USER</h1>
+      <i class="pi pi-user" style="font-size: 1.5rem; color: #cedf0c"></i>
+    </li>
+  </ul>
+</nav>
+<section class="mt-12 flex">
+  <nav class="w-3xs min-w-3xs sticky top-12 h-[calc(100vh-3rem)] text-emerald-50 bg-emerald-600 py-5">
+    <app-side-bar></app-side-bar>
+  </nav>
+  <!-- <main [class]="classNames + ' text-emerald-700' ">
+    Name <input type="text" class="border-1" [(ngModel)]="user.name" [value]="user.name" name="" id="" (change)="onChange($event)">
+    <br/>
+    {{user.name}}
+    <br>
+    action_count: {{count}}
+  </main> -->
+  <main class="p-5">
+    <app-heading (success)="onClickSubmit($event)"></app-heading>
+    <p class="mt-10 text-2xl">{{childMessage}}</p>
+  </main>
+</section>
